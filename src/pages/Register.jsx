@@ -125,9 +125,9 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-cyan-500 to-blue-500 min-h-screen flex justify-center items-center">
+    <section className="bg-gradient-to-r from-orange-500 to-pink-500 min-h-screen flex justify-center items-center">
       <div className="container mx-auto px-4">
-        <div className="shadow-xl p-6 md:p-12 rounded-xl min-h-[600px] max-w-[600px] bg-white mx-auto">
+        <div className="shadow-xl p-6 md:p-12 rounded-xl min-h-[600px] max-w-[600px] bg-white bg-opacity-25 backdrop-blur-md mx-auto">
           <form
             className="w-full flex flex-col gap-y-4"
             onSubmit={handleRegisterSubmit}
@@ -142,7 +142,7 @@ const Register = () => {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-cyan-500"
+              className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-primary rounded-md"
             />
             {/* email */}
             <input
@@ -151,7 +151,7 @@ const Register = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-cyan-500"
+              className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-primary rounded-md"
             />
             {/* password */}
             <div className="relative">
@@ -161,10 +161,10 @@ const Register = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-cyan-500"
+                className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-primary rounded-md"
               />
               <div
-                className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer hover:text-cyan-500"
+                className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer hover:text-primary"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? (
@@ -182,10 +182,10 @@ const Register = () => {
                 required
                 value={conPassword}
                 onChange={(e) => setConPassword(e.target.value)}
-                className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-cyan-500"
+                className="w-full min-h-[55px] shadow-light py-2 px-3 leading-6 focus:outline-primary rounded-md"
               />
               <div
-                className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer hover:text-cyan-500"
+                className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer hover:text-primary"
                 onClick={() => setShowConPassword((prev) => !prev)}
               >
                 {showConPassword ? (
@@ -203,12 +203,12 @@ const Register = () => {
             />
             <button
               type="submit"
-              className={`bg-cyan-500 hover:bg-cyan-600 text-white py-4 px-6 w-full rounded-md uppercase duration-300 leading-none font-bold text-lg ${
+              className={`bg-primary hover:bg-opacity-90 text-white py-4 px-6 w-full rounded-md uppercase duration-300 leading-none font-bold text-lg ${
                 loading && 'cursor-not-allowed opacity-50'
               }`}
               disabled={loading}
             >
-              {loading ? 'REGISTER NOW' : <Loader type="sync" size={11} />}
+              {!loading ? 'REGISTER NOW' : <Loader type="sync" size={11} />}
             </button>
           </form>
           <ToastContainer

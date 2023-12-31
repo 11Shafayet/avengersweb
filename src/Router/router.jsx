@@ -1,18 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
+import MarketingLayout from '../MainLayout/MarketingLayout';
 
-import Home from '../pages/Home';
-import AllBlogs from '../pages/AllBlogs';
-import Contact from '../pages/Contact';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-
-// admin routes
-import AdminLayout from '../MainLayout/AdminLayout';
-import MyBlogs from '../admin/pages/MyBlogs';
-import AddBlog from '../admin/pages/AddBlog';
-import AllUsers from '../admin/pages/AllUsers';
 import PrivateRoute from './PrivateRoute';
+
+// marketing routes
+import MarketingAdmin from '../marketing/pages/MarketingAdmin';
+import LeadCollector from '../marketing/pages/LeadCollector';
+import Caller from '../marketing/pages/Caller';
 
 const router = createBrowserRouter([
   {
@@ -21,53 +18,41 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/login',
         element: <Login />,
       },
       {
         path: '/register',
         element: <Register />,
       },
-      {
-        path: '/allblogs',
-        element: <AllBlogs />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
     ],
   },
-  // admin routes
+  // marketing routes
   {
-    path: '/dashboard',
-    element: <AdminLayout />,
+    path: '/marketing',
+    element: <MarketingLayout />,
     children: [
       {
-        path: '/dashboard',
+        path: '/marketing',
         element: (
-          <PrivateRoute>
-            <MyBlogs />
-          </PrivateRoute>
+          // <PrivateRoute>
+          <MarketingAdmin />
+          // </PrivateRoute>
         ),
       },
       {
-        path: '/dashboard/add-blog',
+        path: '/marketing/lead-collector',
         element: (
-          <PrivateRoute>
-            <AddBlog />
-          </PrivateRoute>
+          // <PrivateRoute>
+            <LeadCollector />
+          // </PrivateRoute>
         ),
       },
       {
-        path: '/dashboard/all-users',
+        path: '/marketing/caller',
         element: (
-          <PrivateRoute>
-            <AllUsers />
-          </PrivateRoute>
+          // <PrivateRoute>
+            <Caller />
+          // </PrivateRoute>
         ),
       },
     ],

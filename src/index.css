@@ -32,3 +32,17 @@ textarea:focus,
   border: 0 !important;
   box-shadow: 0 0 11px rgba(52, 119, 255, 0.22) !important;
 }
+
+.blink {
+  animation: blink 3s linear infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
