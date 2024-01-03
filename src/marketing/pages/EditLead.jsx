@@ -4,6 +4,13 @@ import { toast } from 'react-toastify';
 
 const EditLead = () => {
   const [loading, setLoading] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [fbLink, setFbLink] = useState('');
+  const [email, setEmail] = useState('');
+  const [bType, setBType] = useState('');
+  const [webLink, setWebLink] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,6 +40,8 @@ const EditLead = () => {
                 name="name"
                 className="input-with-shadow"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             {/* phone */}
@@ -45,6 +54,9 @@ const EditLead = () => {
                 placeholder="Phone"
                 className="input-with-shadow"
                 name="phone"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
           </div>
@@ -62,6 +74,8 @@ const EditLead = () => {
                 name="fbLink"
                 className="input-with-shadow"
                 required
+                value={fbLink}
+                onChange={(e) => setFbLink(e.target.value)}
               />
             </div>
             {/* email */}
@@ -74,6 +88,9 @@ const EditLead = () => {
                 placeholder="Email"
                 className="input-with-shadow"
                 name="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -91,6 +108,8 @@ const EditLead = () => {
                 name="btype"
                 className="input-with-shadow"
                 required
+                value={bType}
+                onChange={(e) => setBType(e.target.value)}
               />
             </div>
             {/* Existing website Link */}
@@ -103,6 +122,8 @@ const EditLead = () => {
                 placeholder="Existing website Link"
                 className="input-with-shadow"
                 name="webLink"
+                value={webLink}
+                onChange={(e) => setWebLink(e.target.value)}
               />
             </div>
           </div>
