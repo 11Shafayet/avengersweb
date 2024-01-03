@@ -2,6 +2,7 @@ import { Table } from 'flowbite-react';
 import { FaTrash } from 'react-icons/fa';
 import { useState } from 'react';
 import TableLoader from '../../components/common/TableLoader';
+import { Link } from 'react-router-dom';
 
 const dummyData = [
   {
@@ -28,9 +29,19 @@ const LeadCollector = () => {
   return (
     <div className="my-12 overflow-x-auto h-[700px] md:h-auto">
       <div className="container px-4 mx-auto">
-        <h2 className="text-center font-bold text-3xl md:text-5xl mb-12">
-          Lead Collector
-        </h2>
+        <div className="flex justify-between items-center mb-12 sm:mb-20">
+          <h2 className="text-center font-bold text-3xl md:text-5xl">
+            Lead Collector
+          </h2>
+          <div>
+            <Link
+              to={`/marketing/lead-collector/add`}
+              className="bg-primary py-3 px-6 text-white font-bold uppercase rounded-md hover:translate-y-1 duration-500"
+            >
+              Add Lead +
+            </Link>
+          </div>
+        </div>
         {loading ? (
           <TableLoader />
         ) : (

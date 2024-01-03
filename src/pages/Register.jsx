@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
@@ -125,7 +125,7 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-orange-500 to-pink-500 min-h-screen flex justify-center items-center">
+    <section className="bg-gradient-to-r from-green-200 to-green-500 min-h-screen flex justify-center items-center">
       <div className="container mx-auto px-4">
         <div className="shadow-xl p-6 md:p-12 rounded-xl min-h-[600px] max-w-[600px] bg-white bg-opacity-25 backdrop-blur-md mx-auto">
           <form
@@ -211,18 +211,6 @@ const Register = () => {
               {!loading ? 'REGISTER NOW' : <Loader type="sync" size={11} />}
             </button>
           </form>
-          <ToastContainer
-            position="bottom-center"
-            autoClose={1000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
         </div>
       </div>
     </section>
