@@ -1,5 +1,5 @@
 import { Table } from 'flowbite-react';
-import { FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useState } from 'react';
 import TableLoader from '../../components/common/TableLoader';
 import { Link } from 'react-router-dom';
@@ -63,6 +63,7 @@ const LeadCollector = () => {
                   <Table.HeadCell className="text-start">
                     Existing Website Link
                   </Table.HeadCell>
+                  <Table.HeadCell className="text-start">Edit</Table.HeadCell>
                   <Table.HeadCell className="text-start">Delete</Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
@@ -76,6 +77,11 @@ const LeadCollector = () => {
                       <Table.Cell>{item.email}</Table.Cell>
                       <Table.Cell>{item.BusinessType}</Table.Cell>
                       <Table.Cell>{item.existingWebLink}</Table.Cell>
+                      <Table.Cell>
+                        <Link to={`/marketing/lead-collector/1`}>
+                          <FaEdit className="text-primary cursor-pointer" />
+                        </Link>
+                      </Table.Cell>
                       <Table.Cell>
                         <FaTrash className="text-red-500 cursor-pointer" />
                       </Table.Cell>

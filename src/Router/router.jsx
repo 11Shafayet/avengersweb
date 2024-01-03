@@ -12,6 +12,8 @@ import LeadCollector from '../marketing/pages/LeadCollector';
 import Caller from '../marketing/pages/Caller';
 import AddLead from '../marketing/pages/AddLead';
 import EditLead from '../marketing/pages/EditLead';
+import AddCaller from '../marketing/pages/AddCaller';
+import EditCaller from '../marketing/pages/EditCaller';
 
 const router = createBrowserRouter([
   {
@@ -58,7 +60,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/marketing/lead-collector/edit',
+        path: '/marketing/lead-collector/:id',
         element: (
           // <PrivateRoute>
           <EditLead />
@@ -70,6 +72,22 @@ const router = createBrowserRouter([
         element: (
           // <PrivateRoute>
           <Caller />
+          // </PrivateRoute>
+        ),
+      },
+      {
+        path: '/marketing/caller/add',
+        element: (
+          // <PrivateRoute>
+          <AddCaller />
+          // </PrivateRoute>
+        ),
+      },
+      {
+        path: '/marketing/caller/:id',
+        element: (
+          // <PrivateRoute>
+          <EditCaller />
           // </PrivateRoute>
         ),
       },

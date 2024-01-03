@@ -2,15 +2,8 @@ import { useState } from 'react';
 import Loader from '../../components/common/Loader';
 import { toast } from 'react-toastify';
 
-const AddLead = () => {
+const AddCaller = () => {
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [fbLink, setFbLink] = useState('');
-  const [reason, setReason] = useState('');
-  const [conversionStage, setConversionStage] = useState('');
-  const [meeting, setMeeting] = useState('');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -137,4 +130,4 @@ const AddLead = () => {
   );
 };
 
-export default AddLead;
+export default AddCaller;

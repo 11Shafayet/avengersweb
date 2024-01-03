@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Loader from '../../components/common/Loader';
 import { toast } from 'react-toastify';
 
-const AddLead = () => {
+const EditCaller = () => {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -21,7 +21,7 @@ const AddLead = () => {
     <div className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-center font-bold text-xl md:text-5xl mb-12">
-          Add New Lead
+          Edit Lead
         </h2>
         <form
           className="max-w-[900px] black-shadow mx-auto py-12 px-8 md:px-12 rounded-xl"
@@ -40,6 +40,8 @@ const AddLead = () => {
                 name="name"
                 className="input-with-shadow"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             {/* phone */}
@@ -52,6 +54,8 @@ const AddLead = () => {
                 placeholder="Phone"
                 className="input-with-shadow"
                 name="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
           </div>
@@ -69,47 +73,62 @@ const AddLead = () => {
                 name="fbLink"
                 className="input-with-shadow"
                 required
+                value={fbLink}
+                onChange={(e) => setFbLink(e.target.value)}
               />
             </div>
-            {/* email */}
+            {/* reason for not conversion */}
             <div className="flex flex-col gap-y-3 w-full md:w-1/2">
-              <label htmlFor="email" className="form-label">
-                Email
+              <label htmlFor="reason" className="form-label">
+                Reason for not conversion
               </label>
               <input
-                type="email"
-                placeholder="Email"
+                type="text"
+                placeholder="Reason for not conversion"
                 className="input-with-shadow"
-                name="email"
+                name="reason"
+                required
+                value={reason}
+                onChange={(e) => setReason(e.target.value)}
               />
             </div>
           </div>
 
           {/* input group */}
           <div className="flex flex-col md:flex-row gap-4 justify-between mb-6">
-            {/* btype */}
+            {/* cstage */}
             <div className=" flex flex-col gap-y-3 w-full md:w-1/2">
-              <label htmlFor="btype" className="form-label">
-                Business Type
+              <label htmlFor="cstage" className="form-label">
+                Conversion Stage
               </label>
-              <input
-                type="text"
-                placeholder="Business Type"
-                name="btype"
+              <select
+                name="cstage"
+                id="cstage"
                 className="input-with-shadow"
-                required
-              />
+                value={conversionStage}
+                onChange={(e) => setConversionStage(e.target.value)}
+              >
+                <option value="Conversion Stage" selected hidden>
+                  Conversion Stage
+                </option>
+                <option value="pending">Pending</option>
+                <option value="rejected">Rejected</option>
+                <option value="meeting">Meeting Set</option>
+                <option value="completed">Completed</option>
+              </select>
             </div>
-            {/* Existing website Link */}
+            {/* Meeting */}
             <div className="flex flex-col gap-y-3 w-full md:w-1/2">
-              <label htmlFor="webLink" className="form-label">
-                Existing website Link
+              <label htmlFor="meeting" className="form-label">
+                Meeting Schedule
               </label>
               <input
                 type="text"
-                placeholder="Existing website Link"
+                placeholder="11/04/2024 10:00AM"
                 className="input-with-shadow"
-                name="webLink"
+                name="meeting"
+                value={meeting}
+                onChange={(e) => setMeeting(e.target.value)}
               />
             </div>
           </div>
@@ -127,7 +146,7 @@ const AddLead = () => {
                   <Loader size={11} loader="sync" />
                 </>
               ) : (
-                <>Add New Lead</>
+                <>Edit Lead</>
               )}
             </button>
           </div>
@@ -137,4 +156,4 @@ const AddLead = () => {
   );
 };
 
-export default AddLead;
+export default EditCaller;
