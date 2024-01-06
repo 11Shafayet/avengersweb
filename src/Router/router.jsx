@@ -14,6 +14,7 @@ import AddLead from '../marketing/pages/AddLead';
 import EditLead from '../marketing/pages/EditLead';
 import AddCaller from '../marketing/pages/AddCaller';
 import EditCaller from '../marketing/pages/EditCaller';
+import Dashboard from '../pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />,
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
       },
     ],
   },
